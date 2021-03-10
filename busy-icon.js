@@ -21,7 +21,9 @@ customElements.define("busy-icon", class MyElement extends HTMLElement {
                     if (display != "none") this._display = display;
                     this.style.display = "none"; 
                 }
-                else this.style.display = this._display;
+                else {
+                    this.style.display = this._display === undefined || this._display == "none" ? "inline-block" : this._display;
+                }
             break;
         }
     }
